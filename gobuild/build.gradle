@@ -1,0 +1,29 @@
+/**
+ * To build AAR, run the following commands from top of the project.
+ * $  go get -u golang.org/x/mobile/cmd/gomobile && gomobile init
+ * $ ./gradlew -b gobuild/build.gradle gobind
+ */
+plugins {
+    id "org.golang.mobile.bind" version "0.2.3"
+}
+
+gobind {
+
+    println("Using GOROOT: ${System.env.GOROOT}, GOPATH: ${System.env.GOPATH}")
+
+    /* The Go package path; must be under one of the GOPATH elements or
+     a relative to the current directory (e.g. ../../hello) */
+    pkg = "github.com/sureshg/hello"
+
+    // GOPATH: necessary for gomobile tool. (required)
+    GOPATH = System.env.GOPATH
+
+    // GO: path to go tool. (can omit if 'go' is in the paths visible by Android Studio)
+    GO = System.env.GOROOT
+
+    // GOMOBILE: path to gomobile binary. (can omit if 'gomobile' is under GOPATH)
+    // GOMOBILE = ""
+
+    // GOMOBILEFLAGS: extra flags to be passed to gomobile command. (optional)
+    // GOMOBILEFLAGS = ""
+}
