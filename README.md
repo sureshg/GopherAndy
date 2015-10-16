@@ -19,5 +19,12 @@ import go.hello.Hello;
 Hello.Greetings("Hello from Java!");
 ```
 
+### For more details
+
+* https://github.com/golang/go/wiki/Mobile
+* https://github.com/golang/mobile/tree/master/example/bind
+* https://plugins.gradle.org/plugin/org.golang.mobile.bind
+
+
 
 
