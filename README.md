@@ -8,10 +8,13 @@ Go source using `gobind` tool.
 ```
 $ cd GopherAndy
 $ go get -u golang.org/x/mobile/cmd/gomobile && gomobile init
+
 $ ./gradlew -b gobuild/build.gradle gobind
+or
+$ gomobile bind -target=android github.com/sureshg/hello
 
 ```
-* Import the golang library project (`gobuild/gobuild.aar`)
+* Import the golang library (`gobuild/gobuild.aar`) to your android project.
 
 ```java
 import go.hello.Hello;
